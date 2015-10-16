@@ -76,7 +76,7 @@ def setup():
             cells.append(newCell)
 
     #setup animation
-    '''
+
     for cell in cells:
         if cell.x == 25:
             if cell.y == 26:
@@ -91,9 +91,9 @@ def setup():
         elif cell.x == 26:
             if cell.y == 24:
                 cell.state = 1
-    '''
+
     #Diehard
-    '''
+
     for cell in cells:
         if cell.y == 24:
             if cell.x == 16:
@@ -112,7 +112,8 @@ def setup():
                 cell.state = 1
             if cell.x == 17:
                 cell.state = 1
-    '''
+
+
     for cell in cells:
         if cell.y == 23:
             if cell.x == 23:
@@ -145,6 +146,24 @@ def setup():
                 cell.state = 1
             elif cell.x == 27:
                 cell.state = 1
+    
+
+    for cell in cells:
+        if cell.y == 24:
+            if cell.x == 25:
+                cell.state = 1
+            if cell.x == 24:
+                cell.state = 1
+        if cell.y == 25:
+            if cell.x == 24:
+                cell.state = 1
+        if cell.y == 27:
+            if cell.x == 24:
+                cell.state = 1
+            if cell.x == 25:
+                cell.state = 1
+            if cell.x == 26:
+                cell.state = 1
 
 def draw():
     #print "ran draw"
@@ -159,8 +178,8 @@ def draw():
         else: #alive
             alive += 1
             rand1 = random.randint(0,255)
-            rand2 = random.randint(0,255)
-            rand3 = random.randint(0,255)
+            rand2 = 80#random.randint(0,255)
+            rand3 = 150#random.randint(0,255)
             fill(rand1,rand2,rand3)
             #fill(0,0,0)
             rect(cell.x*16,cell.y*16,16,16)
