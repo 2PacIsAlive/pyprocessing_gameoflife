@@ -52,59 +52,80 @@ class Cell():
             #underpopulation
             if alive < 2:
                 self.state = 0
-            #alive...for now
-            if alive == 2 or alive == 3:
-                self.state = 1 #unnecessary line
             #overcrowding
-            if alive > 3:
+            elif alive > 3:
                 self.state = 0
+            #alive...for now
+            else:
+                self.state = 1 #unnecessary line
         else:
             #reproduction
             if alive == 3:
                 self.state = 1
 
 def setup():
-    size(550,550)
-    ellipseMode(CENTER)
+    #print "ran setup"
+    size(800,800)
+    #ellipseMode(CENTER)
     noStroke()
-    for x in range(550):
-        for y in range(550):
+    for x in range(50):
+        for y in range(50):
+            #randState = random.randint(0,1)
+            #newCell = Cell(x,y,randState)
             newCell = Cell(x,y,0)
             cells.append(newCell)
 
     #setup animation
     for cell in cells:
-        if cell.x == 225:
-            if cell.y == 225:
+        if cell.x == 25:
+            if cell.y == 26:
                 cell.state = 1
-            if cell.y == 224:
+            if cell.y == 25:
                 cell.state = 1
-            if cell.y == 223:
+            if cell.y == 24:
                 cell.state = 1
-        if cell.x == 224:
-            if cell.y == 225:
+        if cell.x == 24:
+            if cell.y == 25:
                 cell.state = 1
-            if cell.y == 224:
+        if cell.x == 26:
+            if cell.y == 24:
                 cell.state = 1
-            if cell.y == 223:
+
+        if cell.x == 23:
+            if cell.y == 24:
+                cell.state = 1
+            if cell.y == 23:
+                cell.state = 1
+            if cell.y == 22:
+                cell.state = 1
+        if cell.x == 22:
+            if cell.y == 23:
+                cell.state = 1
+        if cell.x == 24:
+            if cell.y == 22:
                 cell.state = 1
 
 def draw():
+    #print "ran draw"
     fill(200,50)
-    rect(0,0,550,550)
+    rect(0,0,500,500)
     fill(0)
+    alive = 0
     for cell in cells:
-        cell.changeState()
-        #update cell state
         if cell.state == 0: #dead
-            fill(0,0,0)
-            rect(cell.x,cell.y,1,1)
-        else: #alive
-            #rand1 = random.randint(0,255)
-            #rand2 = random.randint(0,255)
-            #rand3 = random.randint(0,255)
-            #fill(rand1,rand2,rand3)
             fill(255,255,255)
-            rect(cell.x,cell.y,1,1)
+            rect(cell.x*16,cell.y*16,16,16)
+        else: #alive
+            alive += 1
+            rand1 = random.randint(0,255)
+            rand2 = random.randint(0,255)
+            rand3 = random.randint(0,255)
+            fill(rand1,rand2,rand3)
+            #fill(0,0,0)
+            rect(cell.x*16,cell.y*16,16,16)
+        #update cell state
+        cell.changeState()
+    #print "finished draw"
+    #print alive
 
 run()
