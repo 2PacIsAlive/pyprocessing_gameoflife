@@ -76,6 +76,7 @@ def setup():
             cells.append(newCell)
 
     #setup animation
+    '''
     for cell in cells:
         if cell.x == 25:
             if cell.y == 26:
@@ -84,25 +85,65 @@ def setup():
                 cell.state = 1
             if cell.y == 24:
                 cell.state = 1
-        if cell.x == 24:
+        elif cell.x == 24:
             if cell.y == 25:
                 cell.state = 1
-        if cell.x == 26:
+        elif cell.x == 26:
             if cell.y == 24:
                 cell.state = 1
-
-        if cell.x == 23:
-            if cell.y == 24:
+    '''
+    #Diehard
+    '''
+    for cell in cells:
+        if cell.y == 24:
+            if cell.x == 16:
                 cell.state = 1
-            if cell.y == 23:
+        elif cell.y == 25:
+            if cell.x == 10:
                 cell.state = 1
-            if cell.y == 22:
+            if cell.x == 11:
                 cell.state = 1
-        if cell.x == 22:
-            if cell.y == 23:
+        elif cell.y == 26:
+            if cell.x == 11:
                 cell.state = 1
-        if cell.x == 24:
-            if cell.y == 22:
+            if cell.x == 15:
+                cell.state = 1
+            if cell.x == 16:
+                cell.state = 1
+            if cell.x == 17:
+                cell.state = 1
+    '''
+    for cell in cells:
+        if cell.y == 23:
+            if cell.x == 23:
+                cell.state = 1
+            elif cell.x == 24:
+                cell.state = 1
+            elif cell.x == 25:
+                cell.state = 1
+            elif cell.x == 27:
+                cell.state = 1
+        elif cell.y == 24:
+            if cell.x == 23:
+                cell.state = 1
+        elif cell.y == 25:
+            if cell.x == 26:
+                cell.state = 1
+            elif cell.x == 27:
+                cell.state = 1
+        elif cell.y == 26:
+            if cell.x == 24:
+                cell.state = 1
+            elif cell.x == 25:
+                cell.state = 1
+            elif cell.x == 27:
+                cell.state = 1
+        elif cell.y == 27:
+            if cell.x == 23:
+                cell.state = 1
+            elif cell.x == 25:
+                cell.state = 1
+            elif cell.x == 27:
                 cell.state = 1
 
 def draw():
