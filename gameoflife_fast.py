@@ -96,11 +96,11 @@ def change_states():
 
 def setup():
     #print "ran setup"
-    size(800,800,fullscreen=False)
+    size(660,500,fullscreen=False)
     noStroke()
     alive = 0
-    for x in range(0,50):
-        for y in range(0,50):
+    for x in range(0,33):
+        for y in range(0,25):
             #randState = random.randint(0,1)
             #newCell = Cell(x,y,randState)
             newCell = Cell(x,y)
@@ -292,13 +292,13 @@ def draw():
     if debug == True: #maintain initial state for debugging
         #fill(200,50)
         fill(255)
-        rect(0,0,800,800)
+        rect(0,0,660,500)
         fill(0)
         draw_alive = 0
         for cell in cells:
             if cell.state == 0: #dead
                 fill(255,255,255)
-                rect(cell.x*16,cell.y*16,16,16)
+                rect(cell.x*20,cell.y*20,20,20)
             else: #alive
                 draw_alive += 1
                 #rand1 = random.randint(0,255)
@@ -317,18 +317,18 @@ def draw():
                 fill(240,color1,50)
                 #fill(rand1,rand2,rand3)
                 #fill(0,0,0)
-                rect(cell.x*16,cell.y*16,16,16)
+                rect(cell.x*20,cell.y*20,20,20)
         #print alive
     else: #game of life
         #fill(200,50)
         fill(255)
-        rect(0,0,800,800)
+        rect(0,0,330,250)
         fill(0)
         draw_alive = 0
         for cell in cells:
             if cell.state == 0: #dead
                 fill(255,255,255)
-                rect(cell.x*16,cell.y*16,16,16)
+                rect(cell.x*20,cell.y*20,20,20)
             elif cell.state == 1: #alive
                 draw_alive += 1
                 rand1 = 40#random.randint(0,55)
@@ -346,7 +346,7 @@ def draw():
                     color1 = color1 - 1
                 fill(rand1,color1,rand3)
                 #fill(0,0,0)
-                rect(cell.x*16,cell.y*16,16,16)
+                rect(cell.x*20,cell.y*20,20,20)
         #print "finished draw"
         change_states()
         #for cell in cells:
