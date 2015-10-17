@@ -96,10 +96,10 @@ def change_states():
 
 def setup():
     #print "ran setup"
-    size(660,500,fullscreen=False)
+    size(740,500,fullscreen=False)
     noStroke()
     alive = 0
-    for x in range(0,33):
+    for x in range(0,37):
         for y in range(0,25):
             #randState = random.randint(0,1)
             #newCell = Cell(x,y,randState)
@@ -292,7 +292,7 @@ def draw():
     if debug == True: #maintain initial state for debugging
         #fill(200,50)
         fill(255)
-        rect(0,0,660,500)
+        rect(0,0,740,500)
         fill(0)
         draw_alive = 0
         for cell in cells:
@@ -322,7 +322,7 @@ def draw():
     else: #game of life
         #fill(200,50)
         fill(255)
-        rect(0,0,330,250)
+        rect(0,0,740,500)
         fill(0)
         draw_alive = 0
         for cell in cells:
