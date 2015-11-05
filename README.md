@@ -1,2 +1,2 @@
-# pyprocessing_gameoflife
-Conway's Game of Life pyprocessing implementation
+# The Game of Life
+Pyprocessing implementation of Conway's Game of Life
